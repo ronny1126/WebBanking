@@ -16,7 +16,7 @@
         </h3>
         Cuenta : <label id="cuenta">@((BankingLibrary.Operaciones.cuenta == null) ? "N/A" : BankingLibrary.Operaciones.cuenta)</label><br />
         Saldo : <label id="saldo"> @((BankingLibrary.Operaciones.saldo == null) ? "-" : BankingLibrary.Operaciones.saldo.ToString())</label><br />
-        Movimientos : <label id="Movimientos"> -</label><br />
+        Movimientos : <label id="Movimientos"> @((BankingLibrary.Operaciones.movimientos == null) ? "-" : BankingLibrary.Operaciones.movimientos.ToString())</label><br />
         <input type="submit" asp-page-handler="OpenAccount" value="Apertura de Nueva Cuenta">
         <br />
     </div>

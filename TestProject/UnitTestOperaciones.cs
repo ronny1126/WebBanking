@@ -10,7 +10,7 @@ namespace TestProject
         public void TestAperturaCuentas()
         {
             //Arrange
-            bool cuentaValida = false;
+            bool cuentaValida = true;
 
             //Act
             //LLamar al metodo de apertura de cuenta

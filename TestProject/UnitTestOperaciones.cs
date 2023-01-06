@@ -9,16 +9,13 @@ namespace TestProject
         [Fact]
         public void TestAperturaCuentas()
         {
-            //Arrange
-            bool cuentaValida = Operaciones.abierta;
-
             //Act
             //LLamar al metodo de apertura de cuenta
             //cuentaValida = pendiente
 
             Operaciones.AperturaCuenta();
 
-            Assert.True(cuentaValida);
+            Assert.True(Operaciones.abierta);
         }
 
         [Fact]

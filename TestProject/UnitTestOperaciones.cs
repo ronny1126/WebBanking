@@ -10,11 +10,13 @@ namespace TestProject
         public void TestAperturaCuentas()
         {
             //Arrange
-            bool cuentaValida = true;
+            bool cuentaValida = Operaciones.abierta;
 
             //Act
             //LLamar al metodo de apertura de cuenta
             //cuentaValida = pendiente
+
+            Operaciones.AperturaCuenta();
 
             Assert.True(cuentaValida);
         }
@@ -22,10 +24,10 @@ namespace TestProject
         [Fact]
         public void TestDeposito()
         {
-            Operaciones nuevaCuenta = new Operaciones();
-            nuevaCuenta.AperturaCuenta();
-            nuevaCuenta.Deposito(100);
-            Assert.Equal(100, nuevaCuenta.saldo);
+            
+            Operaciones.AperturaCuenta();
+            Operaciones.Deposito(100);
+            Assert.Equal(100, Operaciones.saldo);
         }
 
         [Fact(Skip = "Pendiente de implementacion")]

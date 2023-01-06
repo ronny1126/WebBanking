@@ -4,19 +4,22 @@ using System.Text;
 
 namespace BankingLibrary
 {
-    public class Operaciones
+    public static class Operaciones
     {
-        public string cuenta { get; set; }
-        public double saldo { get; set; }
-        public void AperturaCuenta()
+        public static string cuenta { get; set; }
+        public static double? saldo { get; set; }
+        public static bool abierta { get; set; } = false;
+        public static void AperturaCuenta()
         {
             cuenta = "1001";
+            saldo = 0;
+            abierta = true;
         }
-        public void Deposito(double valor)
+        public static void Deposito(double valor)
         {
             saldo += valor;
         }
-        public void Retiro(double valor)
+        public static void Retiro(double valor)
         {
             saldo -= valor;
         }

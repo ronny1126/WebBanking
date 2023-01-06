@@ -16,5 +16,9 @@ namespace BankingLibrary
         {
             saldo += valor;
         }
+        public void Retiro(double valor)
+        {
+            saldo -= valor;
+        }
     }
 }

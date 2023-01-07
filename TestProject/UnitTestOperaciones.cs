@@ -67,7 +67,6 @@ namespace TestProject
             Operaciones.AperturaCuenta();
             Operaciones.Deposito(20);
             Assert.Throws<ArgumentException>(()=>Operaciones.Retiro(100));
-
         }
 
         [Fact]
@@ -87,6 +86,36 @@ namespace TestProject
                 Assert.True(true); //Se presento la excepcion de valor menor o igual a cero
             }
             
+        }
+
+        [Fact]
+        public void TestContabilizarMovimientos()
+        {
+            //Arrange
+            var cantidadMovimientosEsperados = 2;
+
+
+            //Act
+            Operaciones.AperturaCuenta();
+            Operaciones.Deposito(100);
+            Operaciones.Retiro(100);
+
+            //Assert
+            Assert.Equal(cantidadMovimientosEsperados, Operaciones.movimientos);
+        }
+
+        [Fact]
+        public void TestPagoIntereses()
+        {
+            double deposito = 100;
+            double intereses = Interes.CalculoInteres(deposito, 0.2);
+            
+
+            Operaciones.AperturaCuenta();
+            Operaciones.Deposito(deposito);
+            Operaciones.PagodeIntereses();
+
+            Assert.Equal(deposito + intereses, Operaciones.saldo);
         }
 
         [Fact]

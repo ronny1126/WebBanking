@@ -9,8 +9,8 @@ namespace TestProject
         [Fact]
         public void TestInteres1()
         {
-            decimal monto = 100;
-            decimal tasa = 0.2M;
+            double monto = 100;
+            double tasa = 0.2;
             double resultado = 0;
             resultado = Interes.CalculoInteres(monto, tasa);
             Assert.Equal(0.0548, resultado, 4);
@@ -19,8 +19,8 @@ namespace TestProject
         [Fact]
         public void TestInteres2()
         {
-            decimal monto = 0;
-            decimal tasa = 0.2M;
+            double monto = 0;
+            double tasa = 0.2;
             double resultado = 0;
             resultado = Interes.CalculoInteres(monto, tasa);
             Assert.Equal(0, resultado, 4);
@@ -30,8 +30,8 @@ namespace TestProject
         [Fact]
         public void TestInteres3()
         {
-            decimal monto = -100;
-            decimal tasa = 0.2M;
+            double monto = -100;
+            double tasa = 0.2;
             double resultado = 0;
             resultado = Interes.CalculoInteres(monto, tasa);
             Assert.Equal(0, resultado, 4);

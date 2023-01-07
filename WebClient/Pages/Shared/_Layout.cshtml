@@ -37,7 +37,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            versión 1.1 &copy; 2023 - WebClient - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            versión @ViewContext.GetType().Assembly.GetName().Version &copy; 2023 - WebClient - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
 

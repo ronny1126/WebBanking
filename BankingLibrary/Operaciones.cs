@@ -24,8 +24,28 @@ namespace BankingLibrary
         }
         public static void Retiro(double valor)
         {
-            saldo -= valor;
-            movimientos++;
+            if (saldo < valor)
+                throw new ArgumentException("el valor de retiro sobregira la cuenta");
+            else
+            {
+                saldo -= valor;
+                movimientos++;
+            }
+        }
+
+        public static void BadCoding(double tasa)
+        {
+            int sinuso;
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //
+            //}
+
+            for (int i = 0; i < 10; i++)
+            {
+                if (i > 30) break;
+            }
         }
     }
 }

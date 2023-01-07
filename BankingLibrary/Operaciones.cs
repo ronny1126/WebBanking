@@ -19,18 +19,23 @@ namespace BankingLibrary
         }
         public static void Deposito(double valor)
         {
+            if (valor <= 0)
+                throw new ArgumentException("el valor de depósito debe ser mayor a cero");
+
             saldo += valor;
             movimientos++;
         }
         public static void Retiro(double valor)
         {
+            if (valor <= 0)
+                throw new ArgumentException("el valor de retiro debe ser mayor a cero");
+
             if (saldo < valor)
                 throw new ArgumentException("el valor de retiro sobregira la cuenta");
-            else
-            {
-                saldo -= valor;
-                movimientos++;
-            }
+
+            saldo -= valor;
+            movimientos++;
+
         }
 
         public static void BadCoding(double tasa)

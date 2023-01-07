@@ -71,6 +71,17 @@ namespace TestProject
         }
 
         [Fact]
+        public void TestRetiroCantidadCeroNoPermitido()
+        {
+            int? cantidadMovimientosAntes = 0;
+            Operaciones.AperturaCuenta();
+            Operaciones.Deposito(100);
+            cantidadMovimientosAntes = Operaciones.movimientos;
+            Operaciones.Retiro(0);
+            Assert.Equal(cantidadMovimientosAntes, Operaciones.movimientos);
+        }
+
+        [Fact]
         public void TestSaldo()
         {
             Operaciones.AperturaCuenta();
@@ -78,5 +89,6 @@ namespace TestProject
             Operaciones.Retiro(100);
             Assert.Equal(0, Operaciones.saldo);
         }
+
     }
 }

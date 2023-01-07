@@ -40,6 +40,8 @@ namespace BankingLibrary
 
         public static void PagodeIntereses()
         {
+            //Nos apoyamos en la libreria de interes
+            //TODO: La tasa de interes debe venir de una BD
             double intereses = Interes.CalculoInteres(saldo, 0.2);
             Deposito(intereses);
         }
@@ -47,7 +49,7 @@ namespace BankingLibrary
         public static void BadCoding(double tasa)
         {
             int sinuso;
-
+            int temporal = 0;   
             //for (int i = 0; i < length; i++)
             //{
             //
@@ -57,6 +59,13 @@ namespace BankingLibrary
             {
                 if (i > 30) break;
             }
+
+            if (true)
+                temporal++;
+            else if (false)
+                temporal--;
+            else temporal = 0;
+
         }
     }
 }

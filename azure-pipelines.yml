@@ -36,3 +36,9 @@ steps:
   inputs:
     testRunner: VSTest
     testResultsFiles: '**/*.trx'
+    
+- task: DotNetCoreCLI@2
+  inputs:
+    command: publish
+    publishWebProjects: True
+    zipAfterPublish: True
